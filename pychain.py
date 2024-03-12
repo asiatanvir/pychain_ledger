@@ -49,10 +49,11 @@ import hashlib
 # @TODO
 # Create a Record Data Class that consists of the `sender`, `receiver`, and
 # `amount` attributes
+@dataclass
 class Record:
-    sender: str
-    receiver: str
-    amount : float
+    sender: str = "0"
+    receiver: str = "0"
+    amount : float = 0.0
 
 
 ################################################################################
@@ -71,7 +72,7 @@ class Block:
 
     # @TODO
     # Rename the `data` attribute to `record`, and set the data type to `Record`
-    record: Record
+    record: Record()
 
     creator_id: int
     prev_hash: str = "0"
@@ -141,7 +142,7 @@ class PyChain:
 
 # Adds the cache decorator for Streamlit
 
-
+# st.cache(allow_output_mutation=True)
 @st.cache_resource()
 def setup():
     print("Initializing Chain")
@@ -194,7 +195,7 @@ if st.button("Add Block"):
     # which is set equal to a `Record` that contains the `sender`, `receiver`,
     # and `amount` values
     new_block = Block(
-        record=Record (),
+        record=Record(sender=sender_input, receiver=receiver_input,amount=amount_input),
         creator_id=42,
         prev_hash=prev_block_hash
     )
