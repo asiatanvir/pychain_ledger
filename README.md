@@ -22,7 +22,7 @@ This GitHub repo implements a blockchain-based ledger system, completed with a u
   
 #### PyChain Streamlit Web Interface Validation:
 
-| ![image_1](validation.png)                                | ![image_2](pychain_ledger.png)
+| ![image_1](validation1.png)                                | ![image_2](pychain_ledger1.png)
 
 
 
